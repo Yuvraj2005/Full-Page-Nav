@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, blue, cyan);
+    clip-path: circle(20px at calc(100% - 45px) 45px);
+    transition: .3s all ease-in-out;
+}
+
+.container ul li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 10px 30px;
+    position: relative;
+    line-height: 1em;
+    text-transform: capitalize;
+    transition: .3s all ease;
+}
+
+.container ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+}
+
+.container ul li {
+    margin: 2em 0;
+}
+
+.container ul li a:hover {
+    background: white;
+    color: #5a84a2;
+    border-radius: 40px;
+    transition: .3s all ease;
+    transform: scale(1.2);
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1), inset -2px -2px 12px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.1), inset 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.menu_btn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+    text-align: center;
+    line-height: 2.6em;
+    background: linear-gradient(45deg, blue, cyan);
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2em;
+    transition: .3s all ease;
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.05), 3px 3px 9px rgba(0, 0, 0, 0.5);
+}
+
+.menu_btn:hover {
+    transition: .3s all ease;
+    transform: scale(1.2);
+}
+
+#active:checked~.container {
+    clip-path: circle(80%);
+}
+
+#active:checked~.menu_btn {
+    background: white;
+    color: #5a84a2;
+}
+
+input {
+    display: none;
+}
+
+#active:checked~.menu_btn i::before {
+    content: '\f00d';
+}
